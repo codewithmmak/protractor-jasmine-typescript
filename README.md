@@ -52,10 +52,6 @@ This is Test Automation framework designed using Protractor, Jasmine and TypeScr
 ### Sample Test Results
 ![Protractor, Jasmine and Typescript Test Results](./images/test-results.png?raw=true "Protractor, Jasmine and Typescript Test Results")
 
-<p align="center">
-<img src= "./images/test-results.png" width=800 height=600 alt="protractor-jasmine-typescript.png"/>
-</p>
-
 
 ## [Step by Step installation instruction for Beginners](https://qaloop.tk/protractor/ "Step by Step installation instruction for Beginners")
 
