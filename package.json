@@ -1,0 +1,48 @@
+{
+  "name": "protractor-jasmine-typescript",
+  "version": "1.0.0",
+  "description": "This is Test Automation framework designed using Protractor, Jasmine and TypeScript",
+  "homepage": "https://github.com/qaloop/protractor-jasmine-typescript",
+  "main": "conf.js",
+  "dependencies": {
+    "exceljs": "^1.6.3",
+    "jasmine": "^3.3.0",
+    "papaparse": "^4.6.2",
+    "protractor": "^5.4.1",
+    "protractor-beautiful-reporter": "^1.2.7",
+    "typescript": "^3.2.1",
+    "webdriver-manager": "^12.1.0"
+  },
+  "devDependencies": {
+    "@types/jasmine": "^3.3.1",
+    "@types/jasminewd2": "^2.0.6",
+    "rimraf": "^2.6.2",
+    "tslint": "^5.11.0"
+  },
+  "scripts": {
+    "tsc": "tsc",
+    "clean": "rimraf temp/ && rimraf download/",
+    "pretest": "npm run clean && npm run tsc",
+    "test": "protractor temp/conf.js",
+    "webdriver-update": "node node_modules/protractor/bin/webdriver-manager update"
+  },
+  "keywords": [
+    "protractor",
+    "jasmine",
+    "typescript",
+    "javascript",
+    "angular",
+    "angularjs",
+    "vscode",
+    "testing",
+    "selenium",
+    "webdriverJS",
+    "automation testing"
+  ],
+  "author": "Learning 2 Test",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/qaloop/protractor-jasmine-typescript.git"
+  }
+}
