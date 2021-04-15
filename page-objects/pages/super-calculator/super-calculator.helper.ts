@@ -1,6 +1,5 @@
 import { browser, by, element } from "protractor";
 import { superCalculatorPageObjects } from "./super-calculator.po";
-import { superCalculatorPageConstants } from "./super-calculator.constants";
 
 export class superCalculatorPageHelper {
 

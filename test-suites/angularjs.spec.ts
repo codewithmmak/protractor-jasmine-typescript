@@ -1,6 +1,5 @@
-import { protractor, browser } from "protractor";
+import { browser } from "protractor";
 import { angularjsPageHelper } from "../page-objects/pages/angularjs/angularjs.helper";
-import { angularjsPageObjects } from "../page-objects/pages/angularjs/angularjs.po";
 import { commonPageHelper } from "../page-objects/common/common.helper";
 import { angularjsPageConstants } from "../page-objects/pages/angularjs/angularjs.constants";
 
@@ -21,11 +20,11 @@ describe('AngularJS Website Tests: ', () => {
     it('As a user I can get Browser Window size', async function () {
         await browser.get('https://angularjs.org/');
         await console.log('User is navigated to AngularJS Website');
-        var browserSize = await browser.manage().window().getSize().then(function (windowSize) {
-            // promise resolving block
-            console.log('Browser window width: ' + windowSize.width);
-            console.log('Browser window height: ' + windowSize.height);
-        });
+        
+        const windowSize = await browser.manage().window().getSize()
+        // promise resolving block
+        console.log('Browser window width: ' + windowSize.width);
+        console.log('Browser window height: ' + windowSize.height);
     });
 
     it('As a user I can Set Window Position', async function () {
@@ -41,10 +40,9 @@ describe('AngularJS Website Tests: ', () => {
     it('As a user I can Get Window Position', async function () {
         await browser.get('https://angularjs.org/');
         await console.log('User is navigated to AngularJS Website');
-        await browser.manage().window().getPosition().then(function (windowLocation) {
-            console.log('Browser x postion: ' + windowLocation.x);
-            console.log('Browser y postion: ' + windowLocation.y);
-        });
+        const windowLocation = await browser.manage().window().getPosition()
+        console.log('Browser x postion: ' + windowLocation.x);
+        console.log('Browser y postion: ' + windowLocation.y);
     });
 
     it('As a user I can verify URL', async function () {

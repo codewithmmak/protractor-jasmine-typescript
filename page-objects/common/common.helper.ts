@@ -1,8 +1,7 @@
-var path = require('path');
+import * as path from 'path';
 
 import { browser, by, element } from "protractor";
 import { commonPageObjects } from "./common.po";
-import { commonPageConstants } from "./common.constants";
 import { theInternetPageConstants } from "../pages/the-internet/the-internet.constants";
 
 export class commonPageHelper {
@@ -93,6 +92,5 @@ export class commonPageHelper {
         const text = await commonPageObjects.getTextFromPage(fileName).getText();
         expect(text).toContain(theInternetPageConstants.pageContent.fileName);
     }
-
 
 }

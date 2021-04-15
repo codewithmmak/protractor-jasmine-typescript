@@ -1,3 +1,4 @@
+import * as fs from 'fs'
 import * as path from 'path'
 import { browser, element, by, protractor } from "protractor";
 
@@ -13,16 +14,13 @@ describe('JSON File Operation Tests: ', () => {
         // navigate to the url
         browser.get("https://google.com");
 
-        // import the fs module
-        const fs = require('fs');
-
         // read the file into raw data
-        let rawdata = fs.readFileSync(path.join(process.cwd(), 'test-data', 'test-data.json'));
+        const rawdata = fs.readFileSync(path.join(process.cwd(), 'test-data', 'test-data.json'));
 
         // parse the raw data into meaningful JSON format
-        let data = JSON.parse(rawdata);
+        const data = JSON.parse(rawdata.toString());
 
-        let urlValue = data["url"];
+        const urlValue = data["url"];
         console.log("URL value from JSON file is: " + urlValue);
 
         // enter url value

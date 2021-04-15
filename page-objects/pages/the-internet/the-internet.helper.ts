@@ -1,6 +1,4 @@
-import { browser, by, element } from "protractor";
-import { theInternetPageObjects } from "./the-internet.po";
-import { theInternetPageConstants } from "./the-internet.constants";
+import { browser } from "protractor";
 
 export class theInternetPageHelper {
 
