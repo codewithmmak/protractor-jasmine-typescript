@@ -2,7 +2,7 @@ import * as fs from 'fs'
 import * as path from 'path'
 import { browser, element, by, protractor } from "protractor";
 
-fdescribe('CSV File Operation Tests: ', () => {
+describe('CSV File Operation Tests: ', () => {
 
     browser.ignoreSynchronization = true; // This is for non-angular websites
 
