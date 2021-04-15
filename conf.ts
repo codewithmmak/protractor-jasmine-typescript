@@ -1,7 +1,7 @@
-	import { browser } from "protractor";
+import { browser } from "protractor";
 
-	// Require protractor-beautiful-reporter to generate reports.
-	var HtmlReporter = require('protractor-beautiful-reporter');
+// Require protractor-beautiful-reporter to generate reports.
+var HtmlReporter = require('protractor-beautiful-reporter');
 
 exports.config = {
     directConnect: true,
