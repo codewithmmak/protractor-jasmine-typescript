@@ -21,11 +21,8 @@ This is Test Automation framework designed using Protractor, Jasmine and TypeScr
 
 ### Pre-requisites
 * Download and install Chrome or Firefox browser.
-* Download and install Node.js:
-  * [Install Node.JS](https://qaloop.tk/blog/install-node-js/ "Install Node.JS")
-* Optional - Download and install any Text Editor like Visual Code/Sublime/Brackets
-  * [Install Visual Studio Code](https://qaloop.tk/blog/install-visual-studio-code/ "Install Visual Studio Code")
-
+* Download and install Node.js
+* Download and install any Text Editor like Visual Code/Sublime/Brackets
 
 ### Setup Scripts 
 * Clone the repository into a folder
