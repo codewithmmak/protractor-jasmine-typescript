@@ -1,3 +1,4 @@
+import * as path from 'path'
 import { browser, element, by, ExpectedConditions, protractor } from 'protractor'
 import { Workbook, Worksheet, Row, Cell } from 'exceljs';
 
@@ -55,6 +56,6 @@ describe('Excel File Operations Test: ', function () {
         worksheet.addRow({ id: 2, name: 'Robert', desig: 'Senior QA Engineer', gender: 'Male' });
 
         // write the file to local system
-        wb.xlsx.writeFile('./download-data/excel-with-headers.xlsx')
+        wb.xlsx.writeFile(path.join(process.cwd(), 'download-data', 'excel-with-headers.xlsx'))
     });
 });

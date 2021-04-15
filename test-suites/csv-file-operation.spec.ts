@@ -1,3 +1,5 @@
+import * as fs from 'fs'
+import * as path from 'path'
 import { browser, element, by, protractor } from "protractor";
 
 fdescribe('CSV File Operation Tests: ', () => {
@@ -16,7 +18,7 @@ fdescribe('CSV File Operation Tests: ', () => {
         const fs = require('fs');
 
         // read the file into raw data
-        const file = fs.readFileSync('test-data\\search-data.csv', 'utf8');
+        const file = fs.readFileSync(path.join(process.cwd(), 'test-data', 'search-data.csv'), 'utf8');
         let results = papa.parse(file, {
             header: true
         })
@@ -46,7 +48,7 @@ fdescribe('CSV File Operation Tests: ', () => {
         // import the fs module
         const fs = require('fs');
 
-        fs.writeFileSync('download-data\\data.csv', myData, 'utf8', function (err) {
+        fs.writeFileSync(path.join(process.cwd(), 'download-data', 'data.csv'), myData, 'utf8', function (err) {
             if (err) {
                 console.log('Some error occured - file either not saved or corrupted file saved.');
             } else {
@@ -67,26 +69,18 @@ fdescribe('CSV File Operation Tests: ', () => {
         var row = element.all(by.repeater('dataRow in displayedCollection')).get(1);
         var cells = row.all(by.tagName('td'));
 
-        var cellTexts = cells.map(function (elm) {
+        var cellTexts = await cells.map(function (elm) {
             return elm.getText();
         });
 
         const expectedText = 'sale';
         await expect(cellTexts).toContain(expectedText);
 
-        var myData = cellTexts;
-
-        // import the fs module
-        const fs = require('fs');
-
-        fs.writeFileSync('download-data\\data.csv', myData, 'utf8', function (err) {
-            if (err) {
-                console.log('Some error occured - file either not saved or corrupted file saved.');
-            } else {
-                console.log('Data is saved in file');
-            }
-        });
-
+        await fs.promises.writeFile(
+            path.join(process.cwd(), 'download-data', 'data.csv'),
+            JSON.stringify(cellTexts),
+            'utf8'
+        );
     })
 
 });
