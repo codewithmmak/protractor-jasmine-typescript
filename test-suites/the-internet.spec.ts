@@ -39,7 +39,7 @@ describe('The Internet Website Tests: ', () => {
 
     it('As a user I can select option from drop down field', async function () {
         await commonPageHelper.clickOnAnchorText(theInternetPageConstants.link.dropDown);
-        await commonPageHelper.verifyTextOnPage(theInternetPageConstants.pageContent.dropDown);
+        await commonPageHelper.verifyTextOnPage(theInternetPageConstants.pageContent.dropDownText);
         await commonPageHelper.selectDropDownOptionByValue(theInternetPageConstants.pageContent.dropDownOptionName);
     });
 

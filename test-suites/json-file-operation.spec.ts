@@ -1,3 +1,4 @@
+import * as path from 'path'
 import { browser, element, by, protractor } from "protractor";
 
 describe('JSON File Operation Tests: ', () => {
@@ -16,7 +17,7 @@ describe('JSON File Operation Tests: ', () => {
         const fs = require('fs');
 
         // read the file into raw data
-        let rawdata = fs.readFileSync('test-data\\test-data.json');
+        let rawdata = fs.readFileSync(path.join(process.cwd(), 'test-data', 'test-data.json'));
 
         // parse the raw data into meaningful JSON format
         let data = JSON.parse(rawdata);
