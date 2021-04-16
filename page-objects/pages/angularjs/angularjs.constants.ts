@@ -9,9 +9,7 @@ export class angularjsPageConstants {
             tutorialPageTitle: 'AngularJS: Tutorial: Tutorial',
             faqUrl: 'https://docs.angularjs.org/misc/faq',
             faqPageTitle: 'AngularJS: Miscellaneous: FAQ',
-
         };
     }
-
 
 }

@@ -1,4 +1,4 @@
-import { browser, by, element, ElementFinder } from "protractor";
+import { by, element, ElementFinder } from "protractor";
 
 export class superCalculatorPageObjects {
 
@@ -25,6 +25,5 @@ export class superCalculatorPageObjects {
     static get result() {
         return element(by.binding('latest'));
     }
-
 
 }

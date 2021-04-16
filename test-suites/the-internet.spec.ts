@@ -8,7 +8,7 @@ describe('The Internet Website Tests: ', () => {
 
     beforeEach(async () => {
         browser.waitForAngularEnabled(false); // This is false becasue we are testing non-angular app.
-        browser.manage().deleteAllCookies();
+        await browser.manage().deleteAllCookies();
         await theInternetPageHelper.get();
     });
 

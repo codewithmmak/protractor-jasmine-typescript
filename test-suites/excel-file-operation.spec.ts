@@ -1,47 +1,46 @@
 import * as path from 'path'
-import { browser, element, by, ExpectedConditions, protractor } from 'protractor'
+import { browser } from 'protractor'
 import { Workbook, Worksheet, Row, Cell } from 'exceljs';
 
 describe('Excel File Operations Test: ', function () {
 
     browser.ignoreSynchronization = true; // for non-angular websites
 
-    it('As a user I can read a value from Excel', function () {
+    it('As a user I can read a value from Excel', async function () {
 
         // set implicit time to 30 seconds
-        browser.manage().timeouts().implicitlyWait(30000);
+        await browser.manage().timeouts().implicitlyWait(30000);
 
         // create object for workbook
-        var wb: Workbook = new Workbook();
+        const wb: Workbook = new Workbook();
 
         // read xlsx file type
-        wb.xlsx.readFile("./test-data/excel-worksheet.xlsx").then(function () {
+        await wb.xlsx.readFile("./test-data/excel-worksheet.xlsx")
 
-            //sheet object
-            let sheet: Worksheet = wb.getWorksheet("Sheet1");
+        //sheet object
+        const sheet: Worksheet = wb.getWorksheet("Sheet1");
 
-            //row objct
-            let rowObject: Row = sheet.getRow(2);
+        //row objct
+        const rowObject: Row = sheet.getRow(2);
 
-            // cell object
-            let cellObject: Cell = rowObject.getCell(2);
+        // cell object
+        const cellObject: Cell = rowObject.getCell(2);
 
-            //print
-            console.log(cellObject.value);
+        //print
+        console.log(cellObject.value);
 
-            //use the cell value as url for navigation
-            browser.get(cellObject.toString())
+        //use the cell value as url for navigation
+        await browser.get(cellObject.toString())
 
-        });
     });
 
-    it('As a user I can create Excel sheet with Headers', function () {
+    it('As a user I can create Excel sheet with Headers', async function () {
 
         // set implicit time to 30 seconds
-        browser.manage().timeouts().implicitlyWait(30000);
+        await browser.manage().timeouts().implicitlyWait(30000);
 
-        var wb = new Workbook()
-        var worksheet = wb.addWorksheet('My Sheet');
+        const wb = new Workbook()
+        const worksheet = wb.addWorksheet('My Sheet');
 
         // set the column headers
         worksheet.columns = [
@@ -56,6 +55,6 @@ describe('Excel File Operations Test: ', function () {
         worksheet.addRow({ id: 2, name: 'Robert', desig: 'Senior QA Engineer', gender: 'Male' });
 
         // write the file to local system
-        wb.xlsx.writeFile(path.join(process.cwd(), 'download-data', 'excel-with-headers.xlsx'))
+        await wb.xlsx.writeFile(path.join(process.cwd(), 'download-data', 'excel-with-headers.xlsx'))
     });
 });

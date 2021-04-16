@@ -37,7 +37,6 @@ export class commonPageObjects {
 
     static checkbox() {
         const loc = "//input[@type='checkbox']";
-        // const loc = "//input[@type='checkbox']/(text(),'" + optionText + "')]";
         return element(by.xpath(loc));
     }
 

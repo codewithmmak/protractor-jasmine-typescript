@@ -1,6 +1,4 @@
-import { browser, by, element } from "protractor";
-import { angularjsPageObjects } from "./angularjs.po";
-import { angularjsPageConstants } from "./angularjs.constants";
+import { browser } from "protractor";
 
 export class angularjsPageHelper {
 

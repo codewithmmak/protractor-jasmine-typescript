@@ -1,4 +1,4 @@
-import { protractor, browser } from "protractor";
+import { browser } from "protractor";
 import { superCalculatorPageHelper } from "../page-objects/pages/super-calculator/super-calculator.helper";
 import { superCalculatorPageConstants } from "../page-objects/pages/super-calculator/super-calculator.constants";
 import { commonPageHelper } from "../page-objects/common/common.helper";
@@ -8,7 +8,7 @@ describe('Super Calculator Website Tests: ', () => {
 
     beforeEach(async () => {
         browser.waitForAngularEnabled(true);
-        browser.manage().deleteAllCookies();
+        await browser.manage().deleteAllCookies();
         await superCalculatorPageHelper.get();
     });
 
