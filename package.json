@@ -17,7 +17,7 @@
     "@types/jasminewd2": "^2.0.10",
     "@types/node": "^18.0.0",
     "papaparse": "^5.3.2",
-    "rimraf": "^3.0.2",
+    "rimraf": "^4.0.0",
     "tslint": "^5.20.1"
   },
   "scripts": {
