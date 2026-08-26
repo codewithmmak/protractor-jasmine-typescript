@@ -6,7 +6,7 @@
   "main": "conf.js",
   "dependencies": {
     "exceljs": "^4.4.0",
-    "jasmine": "^6.0.0",
+    "jasmine": "^7.0.0",
     "protractor": "^7.0.0",
     "protractor-beautiful-reporter": "^1.3.6",
     "typescript": "^5.9.3",
